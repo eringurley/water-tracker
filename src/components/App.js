@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import WaterForm from '../components/form/WaterForm';
+import WaterDisplay from '../components/display/WaterDisplay';
 
 export default class App extends Component {
   render() {
     return (
       <>
-        <WaterForm number={5} handleSubmit={() => { }} handleNumberchange={() => { }} />
+        <WaterDisplay total={'100'} />
       </>
     );
   }

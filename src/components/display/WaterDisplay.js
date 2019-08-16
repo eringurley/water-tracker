@@ -1,23 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function WaterDisplay ({ total }) {
+function WaterDisplay({ total, max }) {
   return (
     <section>
+      <p>{total}oz of water today</p>
+      <progress max={max || 240} value={total} />
       <p>{total}</p>
-      <p>{total}</p>
+    </section>
+  );
+}
 
+WaterDisplay.propTypes = {
+  total: PropTypes.number.isRequired,
+  max: PropTypes.number
+};
 
-    {/* </section>
-      <input type="number" 
-      value={number}
-      placeholder="How much water did you drink?"
-      onChange={handleNumberChange} />
-      <button>Add Water</button>
-    </form>
-  ); */}
-
-
-  WaterDisplay.propTypes = {
-    total: PropTypes.number.isRequired,
-  }
+export default WaterDisplay;
