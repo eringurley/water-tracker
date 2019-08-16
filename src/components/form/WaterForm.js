@@ -5,7 +5,7 @@ function WaterForm({ number, handleNumberChange, handleSubmit }) {
   return (
     <form onSubmit={handleSubmit}>
       <input 
-        type="number" 
+        type="number"
         value={number}
         placeholder="How much did you drink?"
         onChange={handleNumberChange} />
@@ -17,7 +17,7 @@ function WaterForm({ number, handleNumberChange, handleSubmit }) {
 WaterForm.propTypes = {
   number: PropTypes.number.isRequired,
   handleNumberChange: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequred
+  handleSubmit: PropTypes.func.isRequired
 };
 
 export default WaterForm;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import WaterForm from './WaterForm';
-import WaterDisplay from './WaterDisplay';
+import WaterForm from '../form/WaterForm';
+import WaterDisplay from '../display/WaterDisplay';
 import PropTypes from 'prop-types';
 
 export default class WaterTracker extends Component {
@@ -8,11 +8,11 @@ export default class WaterTracker extends Component {
     maxWater: PropTypes.number
   }
 
-  static defaulProps = {
+  static defaultProps = {
     maxWater: 32
   }
   state = {
-    waterInput: '',
+    waterInput: 0,
     totalWater: 0
   };
 
@@ -25,7 +25,7 @@ export default class WaterTracker extends Component {
     this.setState(state => {
       return {
         totalWater: state.waterInput + state.totalWater, 
-        waterInput: ''
+        waterInput: 0
       };
     });
   }
@@ -33,10 +33,13 @@ export default class WaterTracker extends Component {
   render() {
     return (
       <>
-      <WaterForm number={this.state.waterInput} handleNumberchange={this.handleNumberChant}
+      <WaterForm 
+        number={this.state.waterInput} 
+        handleNumberChange={this.handleNumberChange}
         handleSubmit={this.handleSubmit}
       />
-      <WaterDisplay total={this.state.total}  max={this.props.maxWater}/>
+      <WaterDisplay total={this.state.totalWater}  
+        max={this.props.maxWater}/>
       </>
     );
   }

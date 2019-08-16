@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import WaterDisplay from '../components/display/WaterDisplay';
+import WaterTracker from '../components/containers/WaterTracker';
 
 export default class App extends Component {
   render() {
     return (
       <>
-        <WaterDisplay total={'100'} />
+        <WaterTracker total={'100'} />
       </>
     );
   }
